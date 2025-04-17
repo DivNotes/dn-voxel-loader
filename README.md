@@ -1,4 +1,4 @@
-# DN Voxel Loader [![npm version](https://badge.fury.io/js/dn-voxel-loader.svg)](https://badge.fury.io/js/dn-voxel-loader) ![Build Status](https://img.shields.io/badge/build-passing-brightgreen) [![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+# DN Voxel Loader [![npm version](https://img.shields.io/npm/v/dn-voxel-loader.svg)](https://www.npmjs.com/package/dn-voxel-loader) [![Build Status](https://github.com/DivNotes/dn-voxel-loader/actions/workflows/release.yml/badge.svg)](https://github.com/DivNotes/dn-voxel-loader/actions/workflows/release.yml) [![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 
 A framework-agnostic JavaScript library for loading MagicaVoxel `.vox` files.
 
@@ -167,7 +167,7 @@ To contribute or work on this library locally:
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/divnotes/dn-voxel-loader.git
+    git clone https://github.com/DivNotes/dn-voxel-loader.git
     cd dn-voxel-loader
     ```
 
