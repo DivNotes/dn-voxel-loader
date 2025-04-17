@@ -1,0 +1,16 @@
+# Build output
+dist/
+
+# Dependencies
+node_modules/
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Coverage reports
+coverage/
+
+# Voxel assets
+examples/assets/*.vox 

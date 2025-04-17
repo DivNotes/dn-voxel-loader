@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DivNotes Pure JS Voxel Loader Example</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Ensure canvas fills container */
+      canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <!-- Import Map for Three.js Modules -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.150.1/build/three.module.js",
+          "three/examples/jsm/": "https://unpkg.com/three@0.150.1/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>DivNotesPure JS Voxel Loader Example</h1>
+    <p>Loading model: <code id="model-name">...</code></p>
+    <div class="canvas-container">
+      <canvas id="voxelCanvas"></canvas>
+    </div>
+    <div id="info">
+      <p>Size: <span id="size">N/A</span></p>
+      <p>Voxels: <span id="count">N/A</span></p>
+      <p id="palette-info">Palette: N/A</p>
+    </div>
+
+    <!-- Load the main script as a module -->
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

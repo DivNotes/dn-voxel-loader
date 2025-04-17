@@ -1,0 +1,58 @@
+# GitHub Actions workflow for testing, building, and publishing releases
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*' # Trigger on version tags like v1.0.0
+
+jobs:
+  release:
+    name: Build and Publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to create GitHub releases
+      id-token: write # Needed for provenance
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json' # Use Node.js version from package.json
+          cache: 'npm'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: npm ci # Use clean install for reproducibility
+
+      - name: Lint code
+        run: npm run lint
+        env:
+          NODE_OPTIONS: --experimental-vm-modules # Enable ESM support for ESLint flat config
+
+      - name: Run tests
+        run: npm run test
+
+      - name: Build package
+        run: npm run build
+
+      - name: Publish package to npm
+        # Provenance generation requires npm >=10.6.0
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          # This creates a draft release. You can modify it before publishing.
+          # Set draft: false to publish automatically.
+          # prerelease: contains(github.ref, '-rc') || contains(github.ref, '-beta') || contains(github.ref, '-alpha')
+          generate_release_notes: true # Automatically generate release notes from commits
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,56 @@
+body {
+  font-family: sans-serif;
+  padding: 1em;
+  background-color: #f4f4f4;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #1a1a1a;
+}
+
+.canvas-container {
+  border: 1px solid #ccc;
+  margin-bottom: 1em;
+  background-color: #fff;
+  /* Fixed size for simplicity, adjust as needed */
+  width: 500px;
+  height: 500px;
+  overflow: hidden; /* Hide scrollbars if canvas is larger */
+  position: relative; /* For potential absolute positioning inside */
+}
+
+#voxelCanvas {
+  display: block;
+  /* Ensure canvas doesn't exceed container */
+  max-width: 100%;
+  max-height: 100%;
+  background-color: #e0e0e0; /* Light gray background for canvas */
+  cursor: grab;
+}
+
+#voxelCanvas:active {
+  cursor: grabbing;
+}
+
+#info {
+  margin-top: 1em;
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+}
+
+#info p {
+  margin: 0.5em 0;
+}
+
+code {
+  background-color: #eee;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}

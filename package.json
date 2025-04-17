@@ -1,0 +1,62 @@
+{
+  "name": "dn-voxel-loader",
+  "version": "0.1.0",
+  "description": "A framework-agnostic JavaScript library for loading MagicaVoxel .vox files.",
+  "main": "dist/dn-voxel-loader.cjs.js",
+  "module": "dist/dn-voxel-loader.esm.js",
+  "browser": "dist/dn-voxel-loader.umd.js",
+  "type": "module",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "rollup -c rollup.config.cjs",
+    "dev": "echo \"Dev script not yet implemented\" && exit 0",
+    "lint": "eslint src/ examples/ --ext js",
+    "lint:fix": "eslint src/ examples/ --ext js --fix",
+    "format": "prettier --write \"**/*.{js,json,md,html,css}\"",
+    "format:check": "prettier --check \"**/*.{js,json,md,html,css}\"",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "docs:api": "typedoc --options typedoc.json",
+    "docs:dev": "npm run docs:api && vitepress dev docs",
+    "docs:build": "npm run docs:api && vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [
+    "voxel",
+    "vox",
+    "loader",
+    "parser",
+    "magicavoxel",
+    "3d",
+    "graphics",
+    "divnotes"
+  ],
+  "author": "DivNotes <yousef@divnotes.com>",
+  "license": "MPL-2.0",
+  "homepage": "https://github.com/divnotes/dn-voxel-loader#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/divnotes/dn-voxel-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/divnotes/dn-voxel-loader/issues"
+  },
+  "devDependencies": {
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.2.6",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "rollup": "^4.40.0",
+    "vitest": "^3.1.1",
+    "vitepress": "^1.2.3",
+    "typedoc": "^0.25.12",
+    "typedoc-plugin-markdown": "^3.17.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

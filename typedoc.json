@@ -1,0 +1,19 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": [
+    "src/index.js",
+    "src/types.js", // Include type definitions
+    "src/octree.js",
+    "src/parser.js"
+  ],
+  "out": "docs/api/generated", // Output directory relative to project root
+  "plugin": ["typedoc-plugin-markdown"],
+  "entryPointStrategy": "expand",
+  "skipErrorChecking": true,
+  "readme": "none", // Don't include a top-level README in the generated docs
+  "includeVersion": true,
+  "hideGenerator": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "tsconfig": "./tsconfig.json"
+}
