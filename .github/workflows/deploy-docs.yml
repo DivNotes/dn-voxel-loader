@@ -12,6 +12,8 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: read
+  deployments: write
 
 # Allow only one concurrent deployment
 concurrency:
@@ -21,6 +23,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -46,6 +51,9 @@ jobs:
   deploy:
     # Add a dependency to the build job
     needs: build
+    permissions:
+      pages: write
+      id-token: write
 
     # Deploy to the github-pages environment
     environment:

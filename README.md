@@ -211,3 +211,7 @@ To contribute or work on this library locally:
 ## License
 
 [MPL-2.0](LICENSE)
+
+## Documentation
+
+Full documentation is available at [https://divnotes.github.io/dn-voxel-loader/](https://divnotes.github.io/dn-voxel-loader/)
