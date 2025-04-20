@@ -41,9 +41,9 @@ jobs:
       - name: Build package
         run: npm run build
 
-      - name: Publish package to npm
+      - name: Publish package to npmjs.com
         # Provenance generation requires npm >=10.6.0
-        run: npm publish --provenance --access public
+        run: npm publish --provenance --access public --registry https://registry.npmjs.org
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -54,7 +54,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com/'
 
       - name: Publish package to GitHub Packages
-        run: npm publish
+        run: npm publish --registry https://npm.pkg.github.com/
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
