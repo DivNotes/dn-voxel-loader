@@ -1,5 +1,5 @@
 {
-  "name": "dn-voxel-loader",
+  "name": "@divnotes/dn-voxel-loader",
   "version": "0.1.2",
   "description": "A framework-agnostic JavaScript library for loading MagicaVoxel .vox files.",
   "main": "dist/dn-voxel-loader.cjs.js",
@@ -43,6 +43,9 @@
   },
   "bugs": {
     "url": "https://github.com/DivNotes/dn-voxel-loader/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
     "eslint": "^9.24.0",
