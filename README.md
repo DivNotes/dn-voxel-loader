@@ -17,18 +17,18 @@ A framework-agnostic JavaScript library for loading MagicaVoxel `.vox` files.
 ## Installation
 
 ```bash
-npm install dn-voxel-loader
+npm install @divnotes/dn-voxel-loader
 # or
-yarn add dn-voxel-loader
+yarn add @divnotes/dn-voxel-loader
 # or
-pnpm add dn-voxel-loader
+pnpm add @divnotes/dn-voxel-loader
 ```
 
 ## Basic Usage
 
 ```javascript
-import { load } from 'dn-voxel-loader'; // Use this for ESM (bundlers, Node.js with "type": "module")
-// For CJS: const { load } = require('dn-voxel-loader');
+import { load } from '@divnotes/dn-voxel-loader'; // Use this for ESM (bundlers, Node.js with "type": "module")
+// For CJS: const { load } = require('@divnotes/dn-voxel-loader');
 // For UMD: Use the global dnVoxLoader.load()
 
 // Can be a URL, ArrayBuffer, or Node.js Buffer
