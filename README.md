@@ -6,10 +6,10 @@ A framework-agnostic JavaScript library for loading MagicaVoxel `.vox` files.
 
 - Parses `.vox` file format (version 150).
 - Extracts voxel dimensions, positions, color indices, palette, and materials.
-- Stores voxel data efficiently in a Sparse Octree.
+- Stores voxel data in a Sparse Octree.
 - Zero runtime dependencies.
 - Works in Node.js (v18+) and modern browsers supporting `fetch` and `ArrayBuffer`.
-- Provides optimized builds for different environments:
+- Provides builds tailored for different environments:
   - **ESM** (`dist/dn-voxel-loader.esm.js`): For modern bundlers like Vite, Rollup, Webpack.
   - **CJS** (`dist/dn-voxel-loader.cjs.js`): For Node.js `require()`.
   - **UMD** (`dist/dn-voxel-loader.umd.js`): For direct use in browsers via `<script>` tag (exposes `dnVoxLoader` global).
@@ -42,7 +42,7 @@ async function loadModel() {
     console.log('Model Size:', voxelData.size); // { x: number, y: number, z: number }
     console.log('Octree Root:', voxelData.octree.root); // Access the SparseOctree root node
 
-    // Efficiently iterate through all voxels in the octree
+    // Iterate through all voxels in the octree
     let voxelCount = 0;
     voxelData.octree.iterateVoxels((x, y, z, data) => {
       voxelCount++;
@@ -53,7 +53,7 @@ async function loadModel() {
     });
     console.log('Number of Voxels (via iteration):', voxelCount);
 
-    // Alternative: Get all voxels as an array (less efficient for large models)
+    // Alternative: Get all voxels as an array (potentially memory-intensive for large models)
     // const allVoxels = voxelData.octree.getAllVoxels();
     // console.log('Number of Voxels (via array):', allVoxels.length);
     // if (allVoxels.length > 0) {
@@ -92,7 +92,7 @@ interface VoxelData {
   /** The dimensions of the model volume. */
   size: { x: number; y: number; z: number };
   /**
-   * A Sparse Octree containing the voxel data for efficient storage and querying.
+   * A Sparse Octree containing the voxel data for storage and querying.
    * Use methods like `octree.iterateVoxels((x, y, z, data) => ...)` to access voxels.
    * `data` object contains `{ colorIndex: number, materialId?: number }`.
    */
@@ -141,17 +141,27 @@ interface SparseOctree {
     y: number,
     z: number
   ): { colorIndex: number; materialId?: number } | null;
-
-  // ... other potential methods (traverse, simplify)
 }
 
 // Definition for VoxelMaterial (conceptual - see src/types.js)
 interface VoxelMaterial {
   id: number;
   type: 'diffuse' | 'metal' | 'glass' | 'emissive' | 'blend' | 'media';
-  // Optional float properties like: weight, rough, spec, ior, att, flux, emit, ldr, metal, power, glow
-  // Optional boolean properties like: isTotalPower
-  properties: Record<string, number | boolean>; // Properties parsed from MATL chunk dict
+  // Optional properties parsed from the MATL chunk dict.
+  // Floats (normalized 0-1 unless specified):
+  weight?: number; // (_weight) Blend ratio for 'blend' type
+  rough?: number; // (_rough) Roughness
+  spec?: number; // (_spec) Specular intensity
+  ior?: number; // (_ior) Index of Refraction
+  att?: number; // (_att) Attenuation for 'glass'/'media'
+  flux?: number; // (_flux) Light intensity for 'emissive' (usually in lumens)
+  emit?: number; // (_emit) Emissive power (often scaled by color)
+  ldr?: number; // (_ldr) Final emissive color multiplier (linear display range)
+  metal?: number; // (_metal) Metallicness for 'metal' type
+  power?: number; // (_power) Specular exponent for ggx approx.
+  glow?: number; // (_glow) Bloom intensity for 'emissive'
+  // Boolean:
+  isTotalPower?: boolean; // (_isTotalPower) If true, 'flux' represents total power directly
 }
 ```
 
