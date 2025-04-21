@@ -1,4 +1,4 @@
-# DN Voxel Loader [![npm version](https://img.shields.io/npm/v/dn-voxel-loader.svg)](https://www.npmjs.com/package/dn-voxel-loader) [![Build Status](https://github.com/DivNotes/dn-voxel-loader/actions/workflows/release.yml/badge.svg)](https://github.com/DivNotes/dn-voxel-loader/actions/workflows/release.yml) [![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+# DN Voxel Loader [![npm version](https://img.shields.io/npm/v/@divnotes/dn-voxel-loader.svg)](https://www.npmjs.com/package/@divnotes/dn-voxel-loader) [![Build Status](https://github.com/DivNotes/dn-voxel-loader/actions/workflows/release.yml/badge.svg)](https://github.com/DivNotes/dn-voxel-loader/actions/workflows/release.yml) [![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 
 A framework-agnostic JavaScript library for loading MagicaVoxel `.vox` files.
 

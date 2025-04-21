@@ -1,9 +1,14 @@
 name: Deploy Docs
 
 on:
-  # Runs on pushes to the main branch
+  # Runs on pushes to the main branch when docs files change
   push:
     branches: [main]
+    paths:
+      - 'docs/**'
+      - '.github/workflows/deploy-docs.yml'
+      - 'typedoc.json'
+      - 'README.md'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
