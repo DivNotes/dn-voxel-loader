@@ -36,13 +36,13 @@
   ],
   "author": "DivNotes <yousef@divnotes.com>",
   "license": "MPL-2.0",
-  "homepage": "https://github.com/DivNotes/dn-voxel-loader#readme",
+  "homepage": "https://divnotes.github.io/dn-voxel-loader/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DivNotes/dn-voxel-loader.git"
+    "url": "git+https://github.com/divnotes/dn-voxel-loader.git"
   },
   "bugs": {
-    "url": "https://github.com/DivNotes/dn-voxel-loader/issues"
+    "url": "https://github.com/divnotes/dn-voxel-loader/issues"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
