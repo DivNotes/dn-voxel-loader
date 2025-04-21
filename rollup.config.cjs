@@ -30,7 +30,7 @@ module.exports = [
   {
     input: input,
     output: {
-      file: pkg.main,
+      file: pkg.main.replace(/\.js$/, '.cjs'),
       format: 'cjs',
       sourcemap: true,
       exports: 'auto', // Automatically determine exports

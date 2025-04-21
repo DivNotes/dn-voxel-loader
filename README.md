@@ -169,6 +169,7 @@ interface VoxelMaterial {
 
 - **Pure JS:** See `examples/pure-js/`. Open `index.html` in your browser. This example uses the UMD build and renders the voxels to a 2D Canvas.
 - **React Three Fiber:** See `examples/react-three-fiber/`. This demonstrates using the library with React and Three.js.
+- **Astro + React + Tailwind:** See `examples/astro-react-tailwind/`. This showcases integration with Astro, React, and Tailwind CSS.
 
 ## Development
 
