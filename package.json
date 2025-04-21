@@ -1,6 +1,6 @@
 {
   "name": "@divnotes/dn-voxel-loader",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A framework-agnostic JavaScript library for loading MagicaVoxel .vox files.",
   "main": "dist/dn-voxel-loader.cjs.js",
   "module": "dist/dn-voxel-loader.esm.js",
