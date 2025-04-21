@@ -39,7 +39,7 @@
   "homepage": "https://divnotes.github.io/dn-voxel-loader/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/divnotes/dn-voxel-loader.git"
+    "url": "https://github.com/DivNotes/dn-voxel-loader"
   },
   "bugs": {
     "url": "https://github.com/divnotes/dn-voxel-loader/issues"
