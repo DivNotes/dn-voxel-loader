@@ -14,7 +14,6 @@
  * @typedef {import('./types.js').VoxelData} VoxelData
  * @typedef {import('./types.js').RGBA} RGBA
  * @typedef {import('./types.js').VoxelMaterial} VoxelMaterial
- * @typedef {import('./octree.js').SparseOctree} SparseOctree
  */
 
 import { SparseOctree } from './octree.js';
@@ -323,6 +322,7 @@ function readString(view, offset) {
  * @returns {{value: Record<string, string>, nextOffset: number}}
  */
 function readDict(view, offset) {
+  /** @type {Record<string, string>} */
   const dict = {};
   try {
     const numPairs = view.getInt32(offset, true);
@@ -579,11 +579,12 @@ export async function parseVoxModel(arrayBuffer) {
             break;
           }
 
-          const material = { id: materialId }; // Start building material object
+          /** @type {import('./types.js').VoxelMaterial} */
+          const material = { id: materialId, type: 'diffuse' }; // Initialize with required type property
 
           // Map dictionary properties to VoxelMaterial fields
           if (props._type) {
-            const type = props._type.toLowerCase();
+            const typeValue = props._type.toLowerCase();
             if (
               [
                 'diffuse',
@@ -592,14 +593,11 @@ export async function parseVoxModel(arrayBuffer) {
                 'emissive',
                 'blend',
                 'media',
-              ].includes(type)
+              ].includes(typeValue)
             ) {
-              material.type = type;
-            } else {
-              material.type = 'diffuse'; // Default if invalid type
+              // @ts-ignore - Type is checked in the condition above
+              material.type = typeValue;
             }
-          } else {
-            material.type = 'diffuse'; // Default if not specified
           }
 
           // Parse float properties (add more as needed)

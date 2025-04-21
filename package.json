@@ -48,16 +48,17 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
+    "@types/node": "^22.14.1",
     "eslint": "^9.24.0",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
     "globals": "^16.0.0",
     "prettier": "^3.5.3",
     "rollup": "^4.40.0",
-    "vitest": "^3.1.1",
-    "vitepress": "^1.2.3",
     "typedoc": "^0.25.12",
-    "typedoc-plugin-markdown": "^3.17.1"
+    "typedoc-plugin-markdown": "^3.17.1",
+    "vitepress": "^1.2.3",
+    "vitest": "^3.1.1"
   },
   "engines": {
     "node": ">=18"
