@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import VoxelViewer from '../components/VoxelViewer.tsx'; // Import the React component
+---
+
+<Layout title="Astro + React + Tailwind + DN Voxel Loader Example">
+	<main class="container mx-auto p-4">
+		<h1 class="text-3xl font-bold text-center mb-8">DN Voxel Loader with React Three Fiber</h1>
+		
+		<VoxelViewer client:load /> 
+		
+		<p class="text-center mt-8 text-gray-600">
+			Voxel model <code class="bg-gray-200 px-1 rounded">/coding.vox</code> rendered using 
+			<code class="bg-gray-200 px-1 rounded">@divnotes/dn-voxel-loader</code>, 
+			<code class="bg-gray-200 px-1 rounded">@react-three/fiber</code>, and 
+			<code class="bg-gray-200 px-1 rounded">@react-three/drei</code>.
+		</p>
+	</main>
+</Layout>
