@@ -9,7 +9,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.0] - 2023-06-30
+## [0.1.10] - 2025-05-22
+
+### Security
+
+- Upgraded VitePress to version 2.0.0-alpha.5 to address a dependency vulnerability in esbuild
+- Fixed security issue by upgrading to esbuild v0.25.0 (addressing Dependabot alert)
+
+## [0.1.9] - 2025-05-21
+
+### Added
+
+- New example application using Astro + React + Tailwind CSS
+
+### Changed
+
+- Updated build configuration in rollup.config.cjs
+- Updated TypeScript configuration in tsconfig.json
+
+## [0.1.0] - 2025-05-18
 
 ### Added
 
